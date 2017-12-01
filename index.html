@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>CBS QUALITools</title>
+	<!--<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="js/knockout-3.4.2.js"></script>
+	<script src="js/links.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<script>
+		var SectionsModel = function(sectionList) {
+			var self = this;
+			self.list = ko.observableArray(sectionList);
+		};
+	</script>
+</head>
+<body>
+	<div class="section-menu">
+		<ul class="section-list" data-bind="foreach: list">
+			<li class="section-item">
+				<div>
+					<span data-bind="text: name"></span>
+				</div>
+				<ul class="links-list" data-bind="foreach: links">
+					<li><a data-bind="text: title, attr: { href: url }"></a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+<script>
+	ko.applyBindings(new SectionsModel(sections));
+</script>
+
+</html>

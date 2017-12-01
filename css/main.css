@@ -1,0 +1,21 @@
+.links-list {
+	list-style-type: none;
+	display: none;
+}
+
+.section-list {
+	list-style-type: none;
+}
+
+.section-item {
+	background: #000000;
+	color: #009fdb;
+	font-size: 20pt;
+	border: 5px #5a5a5a;
+	padding-left: 50px;
+}
+
+.section-menu {
+	float: left;
+	width: 25%;
+}

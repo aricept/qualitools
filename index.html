@@ -15,28 +15,60 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<script>
+		var Section = function(section) {
+			var self = this;
+			self.name = ko.observable(section.name);
+			self.links = ko.observableArray(section.links);
+			self.shown = ko.observable(false);
+			self.slideOut = ko.observable(false);
+			self.closing = ko.observable(false);
+			self.hideAll = section.hideAll;
+			self.delayClose = section.delayClose;
+			self.showLinks = function() {
+				self.shown(true);
+				var slider = setTimeout(self.slideOut, 50, true);
+			};
+			/*self.hideLinks = function() {
+				self.shown(false);
+				var slider = setTimeout(self.slideOut, 50, false);
+			};*/
+			console.log(self.name()+" "+self.shown());
+		};
+
 		var SectionsModel = function(sectionList) {
 			var self = this;
-			self.list = ko.observableArray(sectionList);
+			self.list = ko.observableArray([]);
+			self.hideAll = function(which) {
+				self.list().forEach(function(section){
+					section.shown(false);
+					section.slideOut(false);
+				});
+				which.shown(true);
+				which.slideOut(true);
+			};
+			sectionList.forEach(function(section) {
+				self.list.push(new Section(section));
+			});
 		};
 	</script>
 </head>
 <body>
+	<div class="header">
+		<h2>CBS QUALI<em>Tools</em></h2>
+	</div>
 	<div class="section-menu">
-		<ul class="section-list" data-bind="foreach: list">
-			<li class="section-item">
-				<div>
-					<span data-bind="text: name"></span>
-				</div>
-				<ul class="links-list" data-bind="foreach: links">
-					<li><a data-bind="text: title, attr: { href: url }"></a></li>
-				</ul>
-			</li>
-		</ul>
+		<div class="section-list" data-bind="foreach: list">
+			<div class="section-item" data-bind="event: {mouseover: $parent.hideAll}, css: {shownheader: slideOut}">
+				<span data-bind="text: name"></span>
+			</div>
+			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? links().length*30+'px' : 0+'px'}">
+				<li><a data-bind="text: title, attr: { href: url, title: title }, css: {linkvis: slideOut" target="_new"></a></li>
+			</ul>
+		</div>
 	</div>
 </body>
 <script>
-	ko.applyBindings(new SectionsModel(sections));
+	var mark = ko.applyBindings(new SectionsModel(sections));
 </script>
 
 </html>

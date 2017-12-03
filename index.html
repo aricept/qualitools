@@ -64,7 +64,7 @@
 				<span data-bind="text: name"></span>
 			</div>
 			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? (links().length)*30+'px' : 0+'px'}">
-				<li><a data-bind="text: title, attr: { href: url, title: title }" target="_new"></a></li>
+				<li><a href="#" data-bind="text: title, attr: { title: title }" target="_new"></a></li>
 			</ul>
 		</div>
 	</div>

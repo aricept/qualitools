@@ -28,11 +28,13 @@
 				self.shown(true);
 				var slider = setTimeout(self.slideOut, 50, true);
 			};
+			self.childWidth = function() {
+				return $( ".shown" ).width();
+			};
 			/*self.hideLinks = function() {
 				self.shown(false);
 				var slider = setTimeout(self.slideOut, 50, false);
 			};*/
-			console.log(self.name()+" "+self.shown());
 		};
 
 		var SectionsModel = function(sectionList) {
@@ -61,8 +63,8 @@
 			<div class="section-item" data-bind="event: {mouseover: $parent.hideAll}, css: {shownheader: slideOut}">
 				<span data-bind="text: name"></span>
 			</div>
-			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? links().length*30+'px' : 0+'px'}">
-				<li><a data-bind="text: title, attr: { href: url, title: title }, css: {linkvis: slideOut" target="_new"></a></li>
+			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? (links().length)*30+'px' : 0+'px'}">
+				<li><a data-bind="text: title, attr: { href: url, title: title }" target="_new"></a></li>
 			</ul>
 		</div>
 	</div>

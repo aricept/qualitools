@@ -4,17 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>CBS QUALITools</title>
-	<!--<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script> -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 	<script src="js/knockout-3.4.2.js"></script>
 	<script src="js/links.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<script>
+
+
 		var Section = function(section) {
 			var self = this;
 			self.name = ko.observable(section.name);
@@ -23,34 +21,51 @@
 			self.slideOut = ko.observable(false);
 			self.closing = ko.observable(false);
 			self.hideAll = section.hideAll;
-			self.delayClose = section.delayClose;
+			self.delayClose = ko.observable(false);
 			self.showLinks = function() {
 				self.shown(true);
 				var slider = setTimeout(self.slideOut, 50, true);
 			};
+			self.hideOne = function() {
+				self.shown(false);
+				self.slideOut(false);
+				self.delayClose(false);
+			};
+			self.unhover = function() {
+				var checkTime = function() {
+					if (!self.delayClose()) {
+						self.shown(false);
+						self.slideOut(false);
+						self.delayClose(false);
+					};
+				};
+				self.delayClose(false);
+				var newTimer = setTimeout(checkTime, 500);
+			};
 			self.childWidth = function() {
 				return $( ".shown" ).width();
 			};
-			/*self.hideLinks = function() {
-				self.shown(false);
-				var slider = setTimeout(self.slideOut, 50, false);
-			};*/
 		};
 
 		var SectionsModel = function(sectionList) {
 			var self = this;
+			self.raw = ko.observableArray(sectionList);
 			self.list = ko.observableArray([]);
 			self.hideAll = function(which) {
 				self.list().forEach(function(section){
+					section.delayClose(false);
 					section.shown(false);
 					section.slideOut(false);
 				});
 				which.shown(true);
 				which.slideOut(true);
+				which.delayClose(true);
 			};
-			sectionList.forEach(function(section) {
+			
+			self.raw().forEach(function(section) {
 				self.list.push(new Section(section));
 			});
+			
 		};
 	</script>
 </head>
@@ -60,11 +75,11 @@
 	</div>
 	<div class="section-menu">
 		<div class="section-list" data-bind="foreach: list">
-			<div class="section-item" data-bind="event: {mouseover: $parent.hideAll}, css: {shownheader: slideOut}">
+			<div class="section-item" data-bind="event: {mouseover: $parent.hideAll, mouseout: unhover}, css: {shownheader: slideOut}">
 				<span data-bind="text: name"></span>
 			</div>
-			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? (links().length)*30+'px' : 0+'px'}">
-				<li><a href="#" data-bind="text: title, attr: { title: title }" target="_new"></a></li>
+			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? (links().length)*30+'px' : 0+'px'}, event: {mouseover: delayClose(true)}">
+				<li><a data-bind="text: desc, attr: { href: url, title: desc }" target="_new"></a></li>
 			</ul>
 		</div>
 	</div>

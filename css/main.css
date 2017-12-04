@@ -7,15 +7,18 @@ body{
 	background: #3895c3;
 	position: absolute;
 	left: 300px;
+	*left: 310px;
 	color: #000000;
 	font-size: 14pt;
 	z-index: -1;
 	top: ;
 	border: 1px 0 1px 1px solid #702f8a;
+	*border: 0;
 	width: 350px;
 	height: 0;
 	padding-left: 10px;
 	text-indent: hanging 5px;
+	overflow: hidden;
 }
 
 .links-list a {
@@ -69,7 +72,7 @@ body{
 .shownheader {
 	width: 650px;
 	background: #3895c3;
-	border-top: 1px #702f8a;
+	/*border-top: 1px #702f8a;*/
 	border-bottom: none;
 	color: #ffffff;
 	text-align: right;

@@ -53,7 +53,7 @@ var sections = [
 			{
 				title: "1_3_5_8_12 IPBB Participation",
 				url: "https://workspace.web.att.com/sites/MSR//Sales_and_Service/IP%20Participation/Forms/AllItems.aspx"
-			},
+			}
 		]
 	},
 
@@ -102,7 +102,7 @@ var sections = [
 			{
 				title: "U-MART",
 				url: "http://myumart.web.att.com/legal.aspx?viewLegal=yes&retURL=http%3a%2f%2fmyumart.web.att.com%2f"
-			},
+			}
 		]
 	},
 	{
@@ -176,5 +176,5 @@ var sections = [
 			{
 				title: "",
 				url: ""
-			},
+			}
 */

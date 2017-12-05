@@ -4,38 +4,39 @@ var Section = function(section) {
 	self.links = ko.observableArray(section.links);
 	self.shown = ko.observable(false);
 	self.slideOut = ko.observable(false);
-	self.hideAll = section.hideAll;
 	self.delayClose = ko.observable(false);
+	self.slideIn = ko.observable(true);
+	self.iconify = ko.computed(function() {
+		return self.slideIn() && !self.slideOut() && globalSel();
+	});
 };
+
+var globalSel;
 
 var SectionsModel = function(sectionList) {
 	var self = this;
 	self.raw = ko.observableArray(sectionList);
 	self.list = ko.observableArray([]);
-	self.curr = ko.observable();
+	self.curr = ko.observable('');
+	globalSel = ko.observable(false);
 	self.hover = function(which) {
-		console.log("hovered: " + which.name());
-		console.log(self.curr());
 		if (self.curr()){
 			if (which.name() !== self.curr().name()) {
-				/*self.list().forEach(function(section){
-					section.delayClose(false);
-					section.shown(false);
-					section.slideOut(false);
-				});*/
 				self.curr().delayClose(false).shown(false).slideOut(false);
 			};
 		};
-			self.curr(which);
-			which.shown(true);
-			which.slideOut(true);
-			which.delayClose(true);
-		};
+		self.curr(which);
+		globalSel(true);
+		self.curr().shown(true).slideOut(true).delayClose(true);
+	};
 	self.unhover = function() {
 		var checkTime = function() {
 			if (!self.curr().delayClose()) {
 				self.curr().shown(false).slideOut(false).delayClose(false);
-				self.curr();
+				self.curr('');
+				globalSel(false);
+				console.dir(self.curr());
+				console.log(self.curr());
 			};
 		};
 		self.curr().delayClose(false);

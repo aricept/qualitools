@@ -2,6 +2,7 @@ var Section = function(section) {
 	var self = this;
 	self.name = ko.observable(section.name);
 	self.links = ko.observableArray(section.links);
+	self.img = section.img;
 	self.shown = ko.observable(false);
 	self.slideOut = ko.observable(false);
 	self.delayClose = ko.observable(false);

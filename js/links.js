@@ -1,6 +1,7 @@
 var sections = [
 	{
 		name: "Video Sales",
+		img: "img/flat_satelliteDish_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "SOAR Offer Rate/Quality",
@@ -23,6 +24,7 @@ var sections = [
 
 	{
 		name: "Video Cancels",
+		img: "img/flat_error_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "Daily Cancel Rate - Mahdi File",
@@ -45,6 +47,7 @@ var sections = [
 
 	{
 		name: "Broadband",
+		img: "img/flat_internet_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "Daily BB Attach Rate – Mahdi File",
@@ -59,6 +62,7 @@ var sections = [
 
 	{
 		name: "DIRECTV Now",
+		img: "img/flat_rentOnDemand_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "DTV Now",
@@ -69,6 +73,7 @@ var sections = [
 
 	{
 		name: "Efficiency",
+		img: "img/linear_motion_graphics_rgb_wht.png",
 		links: [
 			{
 				desc: "Genesys",
@@ -95,6 +100,7 @@ var sections = [
 
 	{
 		name: "Sales Integrity",
+		img: "img/flat_global_network_alert_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "Integrity Operations Home",
@@ -109,6 +115,7 @@ var sections = [
 
 	{ 
 		name: "Coaching",
+		img: "img/flat_baseball_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "Qfiniti",
@@ -147,6 +154,7 @@ var sections = [
 
 	{
 		name: "Trouble Tickets",
+		img: "img/flat_alert_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "MOWITS",

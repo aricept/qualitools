@@ -21,7 +21,6 @@ body{
 	text-indent: hanging 5px;
 	overflow: hidden;
 	margin-top: 0;
-	margin-left: 8px;
 }
 
 .links-list a {
@@ -45,12 +44,19 @@ body{
 	font-size: 20pt;
 	border: solid #702f8a;
 	border-width: 0 0 1px;
-	padding-left: 50px;
+	/*padding-right: 50px;*/
 	z-index: 3;
-	width: 250px;
+	width: 300px;
 	*width: 300px;
 	text-align: left;
 	transition: all .3s;
+}
+
+.section-item img {
+	width: 25px;
+	height: 25px;
+	padding: 3px;
+	float: right;
 }
 
 .section-menu {
@@ -76,7 +82,7 @@ body{
 }
 
 .shownheader {
-	width: 600px;
+	width: 650px;
 	*width: 650px;
 	background: #3895c3;
 	/*border-top: 1px #702f8a;*/

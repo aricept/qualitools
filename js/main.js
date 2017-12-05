@@ -6,9 +6,6 @@ var Section = function(section) {
 	self.slideOut = ko.observable(false);
 	self.delayClose = ko.observable(false);
 	self.slideIn = ko.observable(true);
-	self.iconify = ko.computed(function() {
-		return self.slideIn() && !self.slideOut() && globalSel();
-	});
 };
 
 var SectionsModel = function(sectionList) {

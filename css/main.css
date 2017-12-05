@@ -1,5 +1,6 @@
 body{
 	font-family: Arial, sans-serif;
+	margin: 0;
 }
 
 .links-list {
@@ -58,6 +59,7 @@ body{
 }
 
 .header {
+	margin: 0;
 	background: #067AB4;
 	padding: 3px 50px;
 }
@@ -89,5 +91,9 @@ body{
 
 	.iconified {
 		transform: translate(-250px);
+	}
+
+	.links-list {
+		margin-left: 0;
 	}
 }

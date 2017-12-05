@@ -6,8 +6,13 @@ body{
 	list-style-type: none;
 	background: #3895c3;
 	position: absolute;
+<<<<<<< HEAD
 	left: 300px;
 	*left: 310px;
+=======
+	left: 308px;
+	*left: 320px;
+>>>>>>> master
 	color: #000000;
 	font-size: 14pt;
 	z-index: -1;
@@ -19,20 +24,27 @@ body{
 	padding-left: 10px;
 	text-indent: hanging 5px;
 	overflow: hidden;
+<<<<<<< HEAD
+=======
+	margin-top: 0;
+>>>>>>> master
 }
 
 .links-list a {
 	color: #ffffff;
 	height: 0;
 	transition: height .1s ease .2s;
-
 }
 
-.section-list {
+.links-list li {
+	margin-top: 3px;
+}
+
+/*.section-list {
 	list-style-type: none;
 	padding: 0;
 	top: 0;
-}
+}*/
 
 .section-item {
 	left: 0;
@@ -43,7 +55,8 @@ body{
 	border-width: 0 0 1px;
 	padding-left: 50px;
 	z-index: 3;
-	width: 300px;
+	width: 250px;
+	*width: 300px;
 	text-align: left;
 	transition: all .3s;
 }
@@ -70,7 +83,8 @@ body{
 }
 
 .shownheader {
-	width: 650px;
+	width: 600px;
+	*width: 650px;
 	background: #3895c3;
 	/*border-top: 1px #702f8a;*/
 	border-bottom: none;

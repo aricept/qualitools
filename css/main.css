@@ -6,13 +6,8 @@ body{
 	list-style-type: none;
 	background: #3895c3;
 	position: absolute;
-<<<<<<< HEAD
-	left: 300px;
-	*left: 310px;
-=======
 	left: 308px;
 	*left: 320px;
->>>>>>> master
 	color: #000000;
 	font-size: 14pt;
 	z-index: -1;
@@ -24,10 +19,7 @@ body{
 	padding-left: 10px;
 	text-indent: hanging 5px;
 	overflow: hidden;
-<<<<<<< HEAD
-=======
 	margin-top: 0;
->>>>>>> master
 }
 
 .links-list a {

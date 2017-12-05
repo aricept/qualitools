@@ -16,17 +16,6 @@ var Section = function(section) {
 		self.slideOut(false);
 		self.delayClose(false);
 	};
-	self.unhover = function() {
-		var checkTime = function() {
-			if (!self.delayClose()) {
-				self.shown(false);
-				self.slideOut(false);
-				self.delayClose(false);
-			};
-		};
-		self.delayClose(false);
-		var newTimer = setTimeout(checkTime, 500);
-	};
 	self.childWidth = function() {
 		return $( ".shown" ).width();
 	};
@@ -36,15 +25,29 @@ var SectionsModel = function(sectionList) {
 	var self = this;
 	self.raw = ko.observableArray(sectionList);
 	self.list = ko.observableArray([]);
-	self.hideAll = function(which) {
-		self.list().forEach(function(section){
-			section.delayClose(false);
-			section.shown(false);
-			section.slideOut(false);
-		});
-		which.shown(true);
-		which.slideOut(true);
-		which.delayClose(true);
+	self.curr = ko.observable();
+	self.hover = function(which) {
+		if (which !== self.curr()) {
+			self.list().forEach(function(section){
+				section.delayClose(false);
+				section.shown(false);
+				section.slideOut(false);
+			});
+			which.shown(true);
+			which.slideOut(true);
+			which.delayClose(true);
+		};
+	};
+	self.unhover = function(which) {
+		var checkTime = function() {
+			if (!which.delayClose()) {
+				which.shown(false);
+				which.slideOut(false);
+				which.delayClose(false);
+			};
+		};
+		which.delayClose(false);
+		var newTimer = setTimeout(checkTime, 500);
 	};
 	
 	self.raw().forEach(function(section) {

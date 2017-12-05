@@ -26,14 +26,17 @@ body{
 	color: #ffffff;
 	height: 0;
 	transition: height .1s ease .2s;
-
 }
 
-.section-list {
+.links-list li {
+	margin-top: 3px;
+}
+
+/*.section-list {
 	list-style-type: none;
 	padding: 0;
 	top: 0;
-}
+}*/
 
 .section-item {
 	left: 0;

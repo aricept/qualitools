@@ -16,7 +16,7 @@
 		<h2>CBS QUALI<em>Tools</em></h2>
 	</div>
 	<div class="section-menu">
-		<div class="section-list" data-bind="foreach: list">
+		<div class="section-list" data-bind="foreach: list, css: {iconified: globalSel}">
 			<div class="section-item" data-bind="event: {mouseover: $parent.hover, mouseout: $parent.unhover, touch: $parent.hover}, css: {shownheader: slideOut}">
 				<span data-bind="text: name"></span>
 			</div>

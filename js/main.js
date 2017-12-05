@@ -11,14 +11,12 @@ var Section = function(section) {
 	});
 };
 
-var globalSel;
-
 var SectionsModel = function(sectionList) {
 	var self = this;
 	self.raw = ko.observableArray(sectionList);
 	self.list = ko.observableArray([]);
 	self.curr = ko.observable('');
-	globalSel = ko.observable(false);
+	self.globalSel = ko.observable(false);
 	self.hover = function(which) {
 		if (self.curr()){
 			if (which.name() !== self.curr().name()) {
@@ -26,7 +24,7 @@ var SectionsModel = function(sectionList) {
 			};
 		};
 		self.curr(which);
-		globalSel(true);
+		self.globalSel(true);
 		self.curr().shown(true).slideOut(true).delayClose(true);
 	};
 	self.unhover = function() {
@@ -34,7 +32,7 @@ var SectionsModel = function(sectionList) {
 			if (!self.curr().delayClose()) {
 				self.curr().shown(false).slideOut(false).delayClose(false);
 				self.curr('');
-				globalSel(false);
+				self.globalSel(false);
 				console.dir(self.curr());
 				console.log(self.curr());
 			};

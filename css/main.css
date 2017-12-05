@@ -32,6 +32,10 @@ body{
 	margin-top: 3px;
 }
 
+.iconified {
+	transform: translate(-250px);
+}
+
 /*.section-list {
 	list-style-type: none;
 	padding: 0;

@@ -78,7 +78,7 @@
 			<div class="section-item" data-bind="event: {mouseover: $parent.hideAll, mouseout: unhover}, css: {shownheader: slideOut}">
 				<span data-bind="text: name"></span>
 			</div>
-			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? (links().length)*30+'px' : 0+'px'}, event: {mouseover: delayClose(true)}">
+			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? (links().length)*30+'px' : 0+'px'}, event: {mouseover: delayClose(true), mouseout: unhover}">
 				<li><a data-bind="text: desc, attr: { href: url, title: desc }" target="_new"></a></li>
 			</ul>
 		</div>

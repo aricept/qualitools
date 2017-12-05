@@ -92,6 +92,7 @@ var sections = [
 			}
 		]
 	},
+
 	{
 		name: "Sales Integrity",
 		links: [
@@ -105,7 +106,8 @@ var sections = [
 			}
 		]
 	},
-	{
+
+	{ 
 		name: "Coaching",
 		links: [
 			{
@@ -159,7 +161,7 @@ var sections = [
 				url: "https://workspace.web.att.com/sites/CTST//CQM/Lists/Qfiniti%20Playback%20Issue%20Tracking/AllItems.aspx?View={068370ac-bb2d-4e93-94d4-f6193b0f5cf7}&SortField=Your_x0020_City_x0020_Location&SortDir=Asc"
 			}
 		]
-	}
+	} /* To insert a new section, put a comma after this brace, and add the section template from below. */
 ];
 
 /* Section Template
@@ -169,12 +171,18 @@ var sections = [
 		links: [
 
 		]
-	},
+	}
+
+To use the section template, put a comma after the last } in the section you
+want the new section to go after in the menu. The copy the Section Template
+and paste it after that section. In the quotes after name, put whatever you
+want the section to be listed as in the menu. In the links area, you'll paste
+the following Link Template for any links you want to include in that menu.
 
 /* Link Template
 
 			{
 				desc: "",
 				url: ""
-			},
+			}
 */

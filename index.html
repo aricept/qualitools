@@ -8,66 +8,8 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 	<script src="js/knockout-3.4.2.js"></script>
 	<script src="js/links.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
-	<script>
-
-
-		var Section = function(section) {
-			var self = this;
-			self.name = ko.observable(section.name);
-			self.links = ko.observableArray(section.links);
-			self.shown = ko.observable(false);
-			self.slideOut = ko.observable(false);
-			self.closing = ko.observable(false);
-			self.hideAll = section.hideAll;
-			self.delayClose = ko.observable(false);
-			self.showLinks = function() {
-				self.shown(true);
-				var slider = setTimeout(self.slideOut, 50, true);
-			};
-			self.hideOne = function() {
-				self.shown(false);
-				self.slideOut(false);
-				self.delayClose(false);
-			};
-			self.unhover = function() {
-				var checkTime = function() {
-					if (!self.delayClose()) {
-						self.shown(false);
-						self.slideOut(false);
-						self.delayClose(false);
-					};
-				};
-				self.delayClose(false);
-				var newTimer = setTimeout(checkTime, 500);
-			};
-			self.childWidth = function() {
-				return $( ".shown" ).width();
-			};
-		};
-
-		var SectionsModel = function(sectionList) {
-			var self = this;
-			self.raw = ko.observableArray(sectionList);
-			self.list = ko.observableArray([]);
-			self.hideAll = function(which) {
-				self.list().forEach(function(section){
-					section.delayClose(false);
-					section.shown(false);
-					section.slideOut(false);
-				});
-				which.shown(true);
-				which.slideOut(true);
-				which.delayClose(true);
-			};
-			
-			self.raw().forEach(function(section) {
-				self.list.push(new Section(section));
-			});
-			
-		};
-	</script>
+	<script src="js/main.js"></script>
 </head>
 <body>
 	<div class="header">

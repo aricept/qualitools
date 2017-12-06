@@ -15,13 +15,13 @@
 	<div class="header">
 		<h2>CBS QUALI<em>Tools</em></h2>
 	</div>
-	<div class="section-menu">
+	<div class="section-menu" id="top">
 		<div class="section-list" data-bind="foreach: list, css: {iconified: globalSel}">
 			<div class="section-item" data-bind="event: {mouseover: $parent.hover, mouseout: $parent.unhover, touch: $parent.hover}, css: {shownheader: slideOut}">
 				<span class="secTitle" data-bind="text: name"></span>
 				<img data-bind="attr: {src: img}" />
 			</div>
-			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideOut() ? (links().length)*28+'px' : 0+'px'}, event: {mouseover: delayClose(true), mouseout: $parent.unhover}">
+			<ul class="links-list" data-bind="foreach: links, css: {shown: slideOut}, style: {height: slideT() ? (links().length)*28+'px' : 0+'px'}, event: {mouseover: delayClose(true), mouseout: $parent.unhover}">
 				<li><a data-bind="text: desc, attr: { href: url, title: desc }" target="_new"></a></li>
 			</ul>
 		</div>

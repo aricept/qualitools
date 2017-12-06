@@ -6,23 +6,20 @@ body{
 .links-list {
 	list-style-type: none;
 	background: #3895c3;
-	position: absolute;
-	left: 300px;
-	*left: 250px;
+	float: right;
 	color: #000000;
 	font-size: 14pt;
 	z-index: -1;
-	top: ;
 	border: 1px 0 1px 1px solid #702f8a;
 	*border: 0;
-	width: 350px;
+	width: 50%;
 	height: 0;
-	*margin-left: 50px;
-	margin-right: 3px;
-	padding-left: 10px;
+	margin-left: 0px;
+	padding: 0;
 	text-indent: hanging 5px;
 	overflow: hidden;
 	margin-top: 0;
+	display: none;
 }
 
 .links-list a {
@@ -33,9 +30,11 @@ body{
 
 .links-list li {
 	margin: 3px;
+	margin-left: 5px;
 }
 
 .section-list {
+	width: 700px;
 	transition: transform .5s;
 }
 
@@ -47,19 +46,21 @@ body{
 	border: solid #702f8a;
 	border-width: 0 0 1px;
 	z-index: 3;
-	width: 300px;
-	*width: 300px;
+	width: 50%;
 	text-align: left;
 	transition: all .3s;
 	padding-top: 3px;
 	padding-bottom: 3px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .section-item img {
 	width: 25px;
 	height: 25px;
-	padding: 3px;
 	float: right;
+	padding: 0;
+	margin: 0;
 }
 
 .secTitle {
@@ -69,7 +70,7 @@ body{
 
 .section-menu {
 	left: 0;
-	width: 300px;
+	width: 600px;
 }
 
 .header {
@@ -85,19 +86,19 @@ body{
 }
 
 .shown {
+	display: block;
 	z-index: 1;
-	transition: height .3s ease .25s;
+	transition: all ease .25s;
+	float: right;
+	width: ;
 }
 
 .shownheader {
-	width: 650px;
-	*width: 650px;
+	width: 100%;
 	background: #3895c3;
-	/*border-top: 1px #702f8a;*/
 	border-bottom: none;
 	color: #ffffff;
 	text-align: right;
-	padding-right: 10px;
 }
 
 .shownheader .secTitle {
@@ -105,7 +106,7 @@ body{
 }
 
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
 
 	.iconified {
 		transform: translate(-250px);

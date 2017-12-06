@@ -103,13 +103,14 @@ body{
 
 .shownheader .secTitle {
 	*margin-left: 400px;
+	margin-right: 25px;
 }
 
 
 @media screen and (max-width: 700px){
 
 	.iconified {
-		transform: translate(-350px);
+		transform: translate(-300px);
 	}
 
 	.links-list {

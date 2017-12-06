@@ -1,25 +1,25 @@
 body{
 	font-family: Arial, sans-serif;
+	margin: 0;
 }
 
 .links-list {
 	list-style-type: none;
 	background: #3895c3;
-	position: absolute;
-	left: 308px;
-	*left: 320px;
+	float: right;
 	color: #000000;
 	font-size: 14pt;
 	z-index: -1;
-	top: ;
 	border: 1px 0 1px 1px solid #702f8a;
 	*border: 0;
-	width: 350px;
+	width: 50%;
 	height: 0;
-	padding-left: 10px;
+	margin-left: 0px;
+	padding: 0;
 	text-indent: hanging 5px;
 	overflow: hidden;
 	margin-top: 0;
+	display: none;
 }
 
 .links-list a {
@@ -29,14 +29,14 @@ body{
 }
 
 .links-list li {
-	margin-top: 3px;
+	margin: 3px;
+	margin-left: 5px;
 }
 
-/*.section-list {
-	list-style-type: none;
-	padding: 0;
-	top: 0;
-}*/
+.section-list {
+	width: 700px;
+	transition: transform .5s;
+}
 
 .section-item {
 	left: 0;
@@ -45,20 +45,36 @@ body{
 	font-size: 20pt;
 	border: solid #702f8a;
 	border-width: 0 0 1px;
-	padding-left: 50px;
 	z-index: 3;
-	width: 250px;
-	*width: 300px;
+	width: 50%;
 	text-align: left;
 	transition: all .3s;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.section-item img {
+	width: 25px;
+	height: 25px;
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+
+.secTitle {
+	*float: left;
+	margin-left: 10px;
 }
 
 .section-menu {
 	left: 0;
-	width: 300px;
+	width: 600px;
 }
 
 .header {
+	margin: 0;
 	background: #067AB4;
 	padding: 3px 50px;
 }
@@ -70,21 +86,33 @@ body{
 }
 
 .shown {
+	display: block;
 	z-index: 1;
-	transition: height .3s ease .25s;
+	transition: all ease .25s;
+	float: right;
+	width: ;
 }
 
 .shownheader {
-	width: 600px;
-	*width: 650px;
+	width: 100%;
 	background: #3895c3;
-	/*border-top: 1px #702f8a;*/
 	border-bottom: none;
 	color: #ffffff;
 	text-align: right;
-	padding-right: 10px;
 }
 
-.linkvis {
-	height: auto;
+.shownheader .secTitle {
+	*margin-left: 400px;
+}
+
+
+@media screen and (max-width: 700px){
+
+	.iconified {
+		transform: translate(-250px);
+	}
+
+	.links-list {
+		margin-left: 0;
+	}
 }

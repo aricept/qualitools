@@ -69,8 +69,6 @@ var SectionsModel = function(sectionList) {
 				self.curr().shown(false).slideOut(false).delayClose(false);
 				self.curr('');
 				self.globalSel(false);
-				console.dir(self.curr());
-				console.log(self.curr());
 			};
 		};
 		self.curr().delayClose(false);

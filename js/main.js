@@ -27,21 +27,6 @@ var Section = function(section) {
 	self.shown = ko.observable(false);
 	self.slideOut = ko.observable(false);
 	self.slideT = ko.observable(false);
-	self.slideTimer = function(v) {
-		if (v) {
-			self.slideT(false);
-		};
-		if (supportsTransitions()) {
-			var t = setTimeout(function() {
-				self.slideT(v);
-			}, 200);
-		}
-		else {
-			self.slideT(v);
-		}
-
-		
-	};
 	self.delayClose = ko.observable(false);
 	self.slideIn = ko.observable(true);
 };
@@ -61,8 +46,21 @@ var SectionsModel = function(sectionList) {
 		self.curr(which);
 		self.globalSel(true);
 		self.curr().slideOut(true);
-		self.curr().slideTimer(true)
+		self.slideTimer(true)
 		self.curr().shown(true).delayClose(true);
+	};
+	self.slideTimer = function(v) {
+		if (self.curr().slideT()) {
+			return;
+		};
+		if (supportsTransitions()) {
+			var t = setTimeout(function() {
+				self.curr().slideT(v);
+			}, 200);
+		}
+		else {
+			self.curr().slideT(v);
+		}
 	};
 	self.unhover = function() {
 		var checkTime = function() {

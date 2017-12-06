@@ -176,6 +176,7 @@ var sections = [
 
 	{
 		name: "",
+		img: "img/",
 		links: [
 
 		]

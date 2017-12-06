@@ -109,7 +109,7 @@ body{
 @media screen and (max-width: 700px){
 
 	.iconified {
-		transform: translate(-250px);
+		transform: translate(-350px);
 	}
 
 	.links-list {

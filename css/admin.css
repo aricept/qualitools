@@ -59,4 +59,45 @@ body{
 .admin {
 	float: left;
 	margin-left: 20px;
+	width: 33%;
+}
+
+.admin h4 {
+	margin: 10px 0;
+}
+
+.edit: {
+	width: 100%;
+}
+
+.edit h3 {
+	margin: 10px 0;
+}
+
+.main-col {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.list-col {
+	width: 50%;
+	box-sizing: border-box;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.footer {
+	text-align: right;
+	padding-right: 10px;
+}
+
+.plus {
+	font-size: 20pt;
+	font-weight: bolder;
 }

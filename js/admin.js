@@ -55,7 +55,15 @@ var SectionsModel = function(sectionList) {
 	self.raw = ko.observableArray(sectionList);
 	self.list = ko.observableArray([]);
 	self.curr = ko.observable('');
+	self.selCurr = function(data) {
+		self.curr(data);
+		self.globalSel(true);
+	};
 	self.globalSel = ko.observable(false);
+	self.adding = ko.observable(false);
+	self.add = function(b) {
+		self.adding(b);
+	};
 	self.hover = function(which) {
 		if (self.curr()){
 			if (which.name() !== self.curr().name()) {

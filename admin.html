@@ -18,7 +18,7 @@
 	<div class="section-menu" id="top">
 		<div class="section-list">
 			<!-- ko foreach: list -->
-			<div class="section-item">
+			<div class="section-item" data-bind="click: $parent.selCurr">
 				<span class="secTitle" data-bind="text: name"></span>
 				<img data-bind="attr: {src: img}" />
 			</div>
@@ -31,12 +31,33 @@
 	</div>
 	<div class="admin">
 		<h3>Select a Section to Edit</h3>
-		<div class="edit">
+		<div class="edit" data-bind="visible: globalSel">
 			<div class="main-col">
 				<h4>Section Name</h4>
-				<input type="text" name="secName" data-bind="text: curr().name"/>
+				<input type="text" name="secName" data-bind="value: curr().name"/>
 			</div>
-			<div class="list-col">
+			<div data-bind="foreach: curr().links">
+				<div class="list-col left">
+					<h4>Link Description</h4>
+					<input type="text" data-bind="value: desc"/>
+				</div>
+				<div class="list-col right">
+					<h4>Link URL</h4>
+					<input type="text" data-bind="value: url"/>
+				</div>
+			</div>
+			<div class="list-col new-link left" data-bind="visible: adding">
+				<h4>Link Description</h4>
+				<input type="text"/>
+			</div>
+			<div class="list-col right" data-bind="visible: adding">
+				<h4>Link URL</h4>
+				<input type="text"/>
+			</div>
+			<div class="list-col footer right">
+				<h3 data-bind="click: add">Add New Link <span class="plus">+</span></h3>
+			</div>
+			
 		</div>
 	</div>
 </body>

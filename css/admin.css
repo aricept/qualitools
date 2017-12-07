@@ -1,0 +1,62 @@
+body{
+	font-family: Arial, sans-serif;
+	margin: 0;
+}
+
+.section-list {
+	width: 350px;
+	transition: transform .5s;
+}
+
+.section-item {
+	left: 0;
+	background: #000000;
+	color: #009fdb;
+	font-size: 20pt;
+	border: solid #702f8a;
+	border-width: 0 0 1px;
+	z-index: 3;
+	width: 100%;
+	text-align: left;
+	transition: all .3s;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.section-item img {
+	width: 25px;
+	height: 25px;
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+
+.secTitle {
+	*float: left;
+	margin-left: 10px;
+}
+
+.section-menu {
+	left: 0;
+	width: 350px;
+	float: left;
+}
+
+.header {
+	margin: 0;
+	background: #067AB4;
+	padding: 3px 50px;
+}
+
+.header h2 {
+	font-weight: bold;
+	margin: 0;
+	color: #ffffff;
+}
+
+.admin {
+	float: left;
+	margin-left: 20px;
+}

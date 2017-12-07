@@ -26,9 +26,13 @@
 			</ul>
 		</div>
 	</div>
+	<div class="admin">
+		<textarea class="output"></textarea>
+	</div>
 </body>
 <script>
 	var mark = ko.applyBindings(new SectionsModel(sections));
+	loadSections(sections);
 </script>
 
 </html>

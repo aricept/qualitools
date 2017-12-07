@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>CBS QUALITools</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="js/knockout-3.4.2.js"></script>
+	<script src="js/links.js"></script>
+	<link rel="stylesheet" href="css/admin.css" type="text/css" />
+	<script src="js/admin.js"></script>
+</head>
+<body>
+	<div class="header">
+		<h2>CBS QUALI<em>Tools</em> Admin</h2>
+	</div>
+	<div class="section-menu" id="top">
+		<div class="section-list">
+			<!-- ko foreach: list -->
+			<div class="section-item">
+				<span class="secTitle" data-bind="text: name"></span>
+				<img data-bind="attr: {src: img}" />
+			</div>
+			<!-- /ko -->
+			<div class="section-item">
+				<span class="secTitle">New Section</span>
+				<span class="plus">+</span>
+			</div>
+		</div>
+	</div>
+	<div class="admin">
+		<h3>Select a Section to Edit</h3>
+		<div class="edit">
+			<div class="main-col">
+				<h4>Section Name</h4>
+				<input type="text" name="secName" data-bind="text: curr().name"/>
+			</div>
+			<div class="list-col">
+		</div>
+	</div>
+</body>
+<script>
+	var mark = ko.applyBindings(new SectionsModel(sections));
+	loadSections(sections);
+</script>
+
+</html>

@@ -23,7 +23,7 @@
 				<img data-bind="attr: {src: img}" />
 			</div>
 			<!-- /ko -->
-			<div class="section-item">
+			<div class="section-item" data-bind="click: addSec">
 				<span class="secTitle">New Section</span>
 				<span class="plus">+</span>
 			</div>
@@ -57,8 +57,13 @@
 			<div class="list-col footer right">
 				<h3 data-bind="click: add">Add New Link <span class="plus">+</span></h3>
 			</div>
-			
+			<div class="main-col">
+				<h2 data-bind="click: save">Save</h2>
+			</div>
 		</div>
+	</div>
+	<div>
+		<textarea class="results"></textarea>
 	</div>
 </body>
 <script>

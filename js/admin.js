@@ -18,36 +18,16 @@ function supportsTransitions() {
     return false;
 };
 
-function loadSections(sections) {
-	var raw = JSON.stringify(sections, null, 4);
-	$( ".output" ).val(raw);
+function loadSections(data) {
+	var raw = JSON.stringify(data, null, 4);
+	/*$( ".results" ).innerText(raw);*/
 };
 
 var Section = function(section) {
 	var self = this;
 	self.name = ko.observable(section.name);
-	self.links = ko.observableArray(section.links);
 	self.img = section.img;
-	self.shown = ko.observable(false);
-	self.slideOut = ko.observable(false);
-	self.slideT = ko.observable(false);
-	self.slideTimer = function(v) {
-		if (v) {
-			self.slideT(false);
-		};
-		if (supportsTransitions()) {
-			var t = setTimeout(function() {
-				self.slideT(v);
-			}, 200);
-		}
-		else {
-			self.slideT(v);
-		}
-
-		
-	};
-	self.delayClose = ko.observable(false);
-	self.slideIn = ko.observable(true);
+	self.links = ko.observableArray(section.links);
 };
 
 var SectionsModel = function(sectionList) {
@@ -62,7 +42,30 @@ var SectionsModel = function(sectionList) {
 	self.globalSel = ko.observable(false);
 	self.adding = ko.observable(false);
 	self.add = function(b) {
-		self.adding(b);
+		var n = {
+			desc: "",
+			url: ""
+		};
+		self.curr().links.push(n);
+	};
+	self.addSec = function() {
+		var a = {
+			name: "",
+			img: "",
+			links: [
+				{
+					desc: "",
+					url: ""
+				}
+			]
+		};
+		self.list.push(new Section(a));
+		self.selCurr(self.list()[self.list().length-1]);
+	};
+	self.save = function() {
+		var raw = JSON.stringify(ko.toJS(self.list()), null, 4);
+		$( ".results" ).text(raw);
+		self.globalSel(false);
 	};
 	self.hover = function(which) {
 		if (self.curr()){
@@ -94,5 +97,5 @@ var SectionsModel = function(sectionList) {
 	self.raw().forEach(function(section) {
 		self.list.push(new Section(section));
 	});
-	
+	console.dir(self.list());	
 };

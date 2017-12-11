@@ -1,7 +1,46 @@
 var sections = [
+	{ 
+		name: "Coaching",
+		img: "img/flat_baseball_icon_rgb_wht.png",
+		links: [
+			{
+				desc: "Qfiniti",
+				url: "http://qfiniti-consumer.bodc.att.com/QWA/Pages/Home.aspx"
+			},
+			{
+				desc: "IMC",
+				url: "https://www.e-access.att.com/dashboard/imc"
+			},
+			{
+				desc: "Leadership Academy Portal",
+				url: "https://intra4.web.att.com/hrtu/LeadershipAcademy/resources_frontline.cfm"
+			},
+			{
+				desc: "MyCoach",
+				url: "http://mycoach.it.att.com/DayBreak/dashboardAction.do?null"
+			},
+			{
+				desc: "MyResults",
+				url: "http://salesdashboard.it.att.com/DayBreak/dashboardAction.do"
+			},
+			{
+				desc: "Hierarchy Files",
+				url: "https://tspace.web.att.com/communities/service/html/communityview?communityUuid=dd19cdfd-474c-466f-8cbd-583ed45d70bf"
+			},
+			{
+				desc: "Bootcamp Scorecards",
+				url: "https://workspace.web.att.com/sites/salesexecution/ATT%20Boot%20Camp/Forms/AllItems.aspx"
+			},
+			{
+				desc: "Microstrategy",
+				url: "http://ccpmbi.web.att.com:8080/MicroStrategy/servlet/mstrWeb"
+			}
+		]
+	},
+
 	{
 		name: "Video Sales",
-		img: "img/flat_satelliteDish_icon_rgb_wht.png",
+		img: "img/flat_rentOnDemand_icon_rgb_wht.png",
 		links: [
 			{
 				desc: "SOAR Offer Rate/Quality",
@@ -18,6 +57,10 @@ var sections = [
 			{
 				desc: "Walk Out Watching",
 				url: "https://workspace.web.att.com/sites/sales_ctr_rpts/Shared%20Documents/Forms/AllItems.aspx?RootFolder=/sites/sales_ctr_rpts/Shared%20Documents/Reports/Cancel%20Rate&FolderCTID=0x0120007C803550EC8BC94E8BE20A776323B77B&View=%7bA90E1132-225F-4877-B1AA-187804860F3C%7d"
+			},
+			{
+				desc: "DTV Now",
+				url: "https://workspace.web.att.com/sites/DTVNOWChannel/DTV%20NOW/Forms/AllItems.aspx"
 			}
 		]
 	},
@@ -46,6 +89,25 @@ var sections = [
 	},
 
 	{
+		name: "Voice",
+		img: "img/flat_trade_in_rgb_wht.png",
+		links: [
+			{
+				desc: "1_3_5_8_12 AAL Participation",
+				url: "https://workspace.web.att.com/sites/MSR//Sales_and_Service/IP%20Participation/Forms/AllItems.aspx"
+			},
+			{
+				desc: "Yield Percentage",
+				url: "https://workspace.web.att.com/sites/MSR/Sales_and_Service/Add%20A%20Line/Forms/AllItems.aspx"
+			},
+			{
+				desc: "Voice Percentage",
+				url: "https://workspace.web.att.com/sites/MSR/Sales_and_Service/Add%20A%20Line/Forms/AllItems.aspx"
+			}
+		]
+	},
+
+	{
 		name: "Broadband",
 		img: "img/flat_internet_icon_rgb_wht.png",
 		links: [
@@ -61,12 +123,28 @@ var sections = [
 	},
 
 	{
-		name: "DIRECTV Now",
-		img: "img/flat_rentOnDemand_icon_rgb_wht.png",
+		name: "Customer Experience",
+		img: "img/flat_heart_2_rgb_wht.png",
 		links: [
 			{
-				desc: "DTV Now",
-				url: "https://workspace.web.att.com/sites/DTVNOWChannel/DTV%20NOW/Forms/AllItems.aspx"
+				desc: "VOC",
+				url: "http://crft.web.att.com/810"
+			},
+			{
+				desc: "Effortless Experience Insights",
+				url: "https://workspace.web.att.com/sites/TNCommSite/SitePages/Effortless%20Experience%20Insights.aspx"
+			},
+			{
+				desc: "Service Promise Feedback Tool",
+				url: "http://networkone.netops.att.com/index.cfm/fieldops:spft/index/formAction/feedbacksearch"
+			},
+			{
+				desc: "SOAR – CE",
+				url: "https://workspace.web.att.com/sites/soar/EG/Reports_EG/Forms/AllItems.aspx"
+			},
+			{
+				desc: "Customer Experience Hub – myCSP",
+				url: "http://mycsp.web.att.com:80/mycspportal/proxyServlet?skipVisCheck=true&cptId=975241&admincontentid=myc_equ_cha_615768"
 			}
 		]
 	},
@@ -113,44 +191,6 @@ var sections = [
 		]
 	},
 
-	{ 
-		name: "Coaching",
-		img: "img/flat_baseball_icon_rgb_wht.png",
-		links: [
-			{
-				desc: "Qfiniti",
-				url: "http://qfiniti-consumer.bodc.att.com/QWA/Pages/Home.aspx"
-			},
-			{
-				desc: "IMC",
-				url: "https://www.e-access.att.com/dashboard/imc"
-			},
-			{
-				desc: "Leadership Academy Portal",
-				url: "https://intra4.web.att.com/hrtu/LeadershipAcademy/resources_frontline.cfm"
-			},
-			{
-				desc: "MyCoach",
-				url: "http://mycoach.it.att.com/DayBreak/dashboardAction.do?null"
-			},
-			{
-				desc: "MyResults",
-				url: "http://salesdashboard.it.att.com/DayBreak/dashboardAction.do"
-			},
-			{
-				desc: "Hierarchy Files",
-				url: "https://tspace.web.att.com/communities/service/html/communityview?communityUuid=dd19cdfd-474c-466f-8cbd-583ed45d70bf"
-			},
-			{
-				desc: "Bootcamp Scorecards",
-				url: "https://workspace.web.att.com/sites/salesexecution/ATT%20Boot%20Camp/Forms/AllItems.aspx"
-			},
-			{
-				desc: "Microstrategy",
-				url: "http://ccpmbi.web.att.com:8080/MicroStrategy/servlet/mstrWeb"
-			}
-		]
-	},
 
 	{
 		name: "Trouble Tickets",
@@ -169,7 +209,17 @@ var sections = [
 				url: "https://workspace.web.att.com/sites/CTST//CQM/Lists/Qfiniti%20Playback%20Issue%20Tracking/AllItems.aspx?View={068370ac-bb2d-4e93-94d4-f6193b0f5cf7}&SortField=Your_x0020_City_x0020_Location&SortDir=Asc"
 			}
 		]
-	} /* To insert a new section, put a comma after this brace, and add the section template from below. */
+	},
+
+	{
+		name: "Harman Files",
+		img: "img/flat_offers_icon_rgb_wht.png",
+		links: [
+
+		]
+	}
+
+	 /* To insert a new section, put a comma after this brace, and add the section template from below. */
 ];
 
 /* Section Template

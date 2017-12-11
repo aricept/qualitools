@@ -103,8 +103,25 @@ body{
 }
 
 .shownheader .secTitle {
-	*margin-left: 400px;
 	margin-right: 25px;
+}
+
+.contacts-toggle {
+	margin-top: 75px;
+	text-align: center;
+	font-size: 24pt;
+	background: #3895c3;
+	color: #ffffff;
+	width: 350px;
+}
+
+.contact-table {
+	font-size: 10pt;
+}
+
+td {
+	box-sizing: content-box;
+	padding: 2px;
 }
 
 

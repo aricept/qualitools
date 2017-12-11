@@ -75,10 +75,6 @@ var SectionsModel = function(sectionList, contactsList) {
 		self.curr().delayClose(false);
 		var newTimer = setTimeout(checkTime, 500);
 	};
-	self.contactsVis = ko.observable(false);
-	self.toggleContacts = function() {
-		self.contactsVis(!self.contactsVis());
-	};
 	contactsList.forEach(function(contact) {
 		self.contacts().push(contact);
 	});

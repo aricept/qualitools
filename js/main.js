@@ -31,12 +31,13 @@ var Section = function(section) {
 	self.slideIn = ko.observable(true);
 };
 
-var SectionsModel = function(sectionList) {
+var SectionsModel = function(sectionList, contactsList) {
 	var self = this;
 	self.raw = ko.observableArray(sectionList);
 	self.list = ko.observableArray([]);
 	self.curr = ko.observable('');
 	self.globalSel = ko.observable(false);
+	self.contacts = ko.observable([]);
 	self.hover = function(which) {
 		if (self.curr()){
 			if (which.name() !== self.curr().name()) {
@@ -74,7 +75,13 @@ var SectionsModel = function(sectionList) {
 		self.curr().delayClose(false);
 		var newTimer = setTimeout(checkTime, 500);
 	};
-	
+	self.contactsVis = ko.observable(false);
+	self.toggleContacts = function() {
+		self.contactsVis(!self.contactsVis());
+	};
+	contactsList.forEach(function(contact) {
+		self.contacts().push(contact);
+	});
 	self.raw().forEach(function(section) {
 		self.list.push(new Section(section));
 	});

@@ -9,6 +9,7 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 	<script src="js/knockout-3.4.2.js"></script>
 	<script src="js/links.js"></script>
+	<script src="js/contacts.js"></script>
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<script src="js/main.js"></script>
 </head>
@@ -29,9 +30,33 @@
 			</ul>
 		</div>
 	</div>
+	<div class="contacts-toggle" data-bind="click: toggleContacts">
+		<span>Contacts</span>
+	</div>
+	<div class="contact-table" data-bind="visible: contactsVis">
+		<table>
+			<tr>
+				<th>Center</th>
+				<th>Quality Manager</th>
+				<th>Email</th>
+				<th>Q</th>
+				<th>Phone</th>
+			</tr>
+			<tbody data-bind="foreach: contacts">
+				<tr>
+					<td data-bind="text: center"></td>
+					<td data-bind="text: name"></td>
+					<td><a data-bind="attr: {href: 'mailto:'+uid+'@att.com'}"><img src="img/flat_e-mail_icon_rgb_blu.png" width="25" height="25"/></a></td>
+					<td><a data-bind="attr: {href: 'qto://talk/'+uid}"><img data-bind="attr: {src: 'http://presence.q.att.com/presence/'+uid+'.gif'}" width="16" height="16"/></a></td>
+					<td data-bind="text: phone"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 </body>
 <script>
-	var mark = ko.applyBindings(new SectionsModel(sections));
+	var mark = ko.applyBindings(new SectionsModel(sections, contacts));
 </script>
 
 </html>
